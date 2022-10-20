@@ -11,7 +11,7 @@ var toyRouter = require('./routes/toy')
 
 var mongoose = require('mongoose')
 var url =
-   "mongodb+srv://Mem382002:WVnzGr1bsFZzOQba@cluster0.ovmxcso.mongodb.net/toy"
+   "mongodb://localhost:27017/toy"
 
 // var url =
 //     'mongodb+srv://codecode12345:123456789m@cluster0.ik5tvr8.mongodb.net/cloud'
@@ -52,6 +52,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
 app.use('/toy', toyRouter)
+app.use('/product', toyRouter)
+
 // app.use('/lecturer', lecturerRouter)
 // app.use('/api', apiRouter)
 
