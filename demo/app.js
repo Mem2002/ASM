@@ -5,13 +5,13 @@ var cookieParser = require('cookie-parser')
 var logger = require('morgan')
 
 var indexRouter = require('./routes/index')
-var studentRouter = require('./routes/student')
-var lecturerRouter = require('./routes/lecturer')
-var apiRouter = require('./routes/api')
+var toyRouter = require('./routes/toy')
+// var lecturerRouter = require('./routes/lecturer')
+// var apiRouter = require('./routes/api')
 
 var mongoose = require('mongoose')
 var url =
-    'mongodb+srv://longndt:xdHB48B3Fv*%40TPa@cluster0.i5kings.mongodb.net/cloud'
+   "mongodb://localhost:27017/toy"
 
 // var url =
 //     'mongodb+srv://codecode12345:123456789m@cluster0.ik5tvr8.mongodb.net/cloud'
@@ -51,9 +51,9 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
-app.use('/student', studentRouter)
-app.use('/lecturer', lecturerRouter)
-app.use('/api', apiRouter)
+app.use('/toy', toyRouter)
+// app.use('/lecturer', lecturerRouter)
+// app.use('/api', apiRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -71,9 +71,9 @@ app.use(function (err, req, res, next) {
     res.render('error')
 })
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 1000
 app.listen(port, () => {
-    console.log('http://localhost:3000')
+    console.log('http://localhost:1000')
 })
 
 module.exports = app
