@@ -11,7 +11,7 @@ var toyRouter = require('./routes/toy')
 
 var mongoose = require('mongoose')
 var url =
-   "mongodb+srv://Mem382002:WVnzGr1bsFZzOQba@cluster0.ovmxcso.mongodb.net/toy"
+   "mongodb+srv://Mem382002:WVnzGr1bsFZzOQba@cluster0.ovmxcso.mongodb.net/mem"
 
 // var url =
 //     'mongodb+srv://codecode12345:123456789m@cluster0.ik5tvr8.mongodb.net/cloud'
