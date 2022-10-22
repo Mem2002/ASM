@@ -61,9 +61,9 @@ router.get('/add', (req, res) => {
 //         }
 //     })
 // })
-router.get('/add', (req, res) => {
-    res.render("toy/new");
-})
+// router.get('/add', (req, res) => {
+//     res.render("toy/new");
+// })
 
 //nhận & xử lý dữ liệu từ form ADD
 router.post('/add', (req, res) => {
@@ -125,6 +125,14 @@ router.get('/sort/asc', (req, res) => {
                 res.render('toy/index', { toy: data })
             }
         })
+})
+
+router.get('/list', (req,res)=>{
+    ToyModel.find((err, data)=>{
+        if(!err){
+            res.render('toy/list', {toy : data})
+        }
+    })
 })
 
 router.get('/sort/desc', (req, res) => {
